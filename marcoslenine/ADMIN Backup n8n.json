@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "new": {
       "main": [
@@ -442,7 +442,7 @@
           "string": [
             {
               "name": "repo.owner",
-              "value": "igluonline"
+              "value": "andrelug"
             },
             {
               "name": "repo.name",
@@ -450,7 +450,7 @@
             },
             {
               "name": "repo.path",
-              "value": "andrelug/n8nbackup"
+              "value": "marcoslenine/"
             }
           ]
         },
@@ -468,5 +468,5 @@
   "settings": {},
   "staticData": null,
   "tags": [],
-  "updatedAt": "2021-10-31T13:27:15.079Z"
+  "updatedAt": "2021-10-31T13:32:39.877Z"
 }
