@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "new": {
       "main": [
@@ -214,6 +214,7 @@
     },
     {
       "parameters": {
+        "authentication": "basicAuth",
         "url": "https://n8n.andrelug.com/rest/workflows",
         "options": {}
       },
@@ -223,7 +224,13 @@
         -182.5,
         572.5
       ],
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "5",
+          "name": "n8n Self"
+        }
+      }
     },
     {
       "parameters": {
@@ -262,6 +269,7 @@
     },
     {
       "parameters": {
+        "authentication": "basicAuth",
         "url": "=https://n8n.andrelug.com/rest/workflows/{{$json[\"id\"]}}",
         "options": {}
       },
@@ -271,7 +279,13 @@
         317.5,
         732.5
       ],
-      "typeVersion": 1
+      "typeVersion": 1,
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "5",
+          "name": "n8n Self"
+        }
+      }
     },
     {
       "parameters": {
@@ -395,7 +409,7 @@
         "triggerTimes": {
           "item": [
             {
-              "hour": 20,
+              "hour": 3,
               "minute": 11
             }
           ]
@@ -454,5 +468,5 @@
   "settings": {},
   "staticData": null,
   "tags": [],
-  "updatedAt": "2021-10-31T00:54:14.189Z"
+  "updatedAt": "2021-10-31T00:55:36.412Z"
 }
