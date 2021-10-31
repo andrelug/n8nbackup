@@ -1,0 +1,294 @@
+{
+  "active": false,
+  "connections": {
+    "Nova Hospedagem": {
+      "main": [
+        [
+          {
+            "node": "Verifica se já é cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verifica se já é cliente": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Cria Fatura",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Envia e-mail onboarding",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria cliente": {
+      "main": [
+        [
+          {
+            "node": "Cria Fatura",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Envia e-mail onboarding": {
+      "main": [
+        [
+          {
+            "node": "Aguarda preenchimento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aguarda preenchimento": {
+      "main": [
+        [
+          {
+            "node": "Cria cliente1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria cliente1": {
+      "main": [
+        [
+          {
+            "node": "Cria cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cria Fatura": {
+      "main": [
+        [
+          {
+            "node": "Migrar ou Criar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Migrar ou Criar": {
+      "main": [
+        [
+          {
+            "node": "Cria Migração",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Cria Novo site",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2021-10-31T01:02:33.463Z",
+  "id": "3",
+  "name": "Novo Servidor",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [
+        -182.5,
+        409.5
+      ],
+      "webhookId": "8bd1a89d-ae4c-4642-9cc9-0f0211d57ef5",
+      "credentials": {
+        "telegramApi": {
+          "id": "15",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "event": "pageAddedToDatabase",
+        "databaseId": "037523fe-edef-41eb-8d21-c5bf678e04d2"
+      },
+      "name": "Nova Hospedagem",
+      "type": "n8n-nodes-base.notionTrigger",
+      "typeVersion": 1,
+      "position": [
+        430,
+        170
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "3",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "name": "Verifica se já é cliente",
+      "type": "n8n-nodes-base.quickbooks",
+      "typeVersion": 1,
+      "position": [
+        650,
+        170
+      ],
+      "credentials": {
+        "quickBooksOAuth2Api": {
+          "id": "2",
+          "name": "QuickBooks Online account"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        870,
+        170
+      ]
+    },
+    {
+      "parameters": {},
+      "name": "Cria Fatura",
+      "type": "n8n-nodes-base.quickbooks",
+      "typeVersion": 1,
+      "position": [
+        1750,
+        150
+      ]
+    },
+    {
+      "parameters": {},
+      "name": "Cria cliente",
+      "type": "n8n-nodes-base.quickbooks",
+      "typeVersion": 1,
+      "position": [
+        1490,
+        370
+      ]
+    },
+    {
+      "parameters": {},
+      "name": "Cria cliente1",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 1,
+      "position": [
+        1340,
+        370
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "name": "Envia e-mail onboarding",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        370
+      ]
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "options": {}
+      },
+      "name": "Aguarda preenchimento",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [
+        1170,
+        370
+      ],
+      "webhookId": "41c54fc5-bd04-4b2f-9d87-4ee79a93fada"
+    },
+    {
+      "parameters": {},
+      "name": "Migrar ou Criar",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1960,
+        170
+      ]
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "name": "Cria Migração",
+      "type": "n8n-nodes-base.clickUp",
+      "typeVersion": 1,
+      "position": [
+        2220,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "additionalFields": {}
+      },
+      "name": "Cria Novo site",
+      "type": "n8n-nodes-base.clickUp",
+      "typeVersion": 1,
+      "position": [
+        2220,
+        300
+      ]
+    }
+  ],
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "updatedAt": "2021-10-31T05:11:13.252Z"
+}
