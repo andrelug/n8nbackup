@@ -450,7 +450,7 @@
             },
             {
               "name": "repo.path",
-              "value": "andrelug/n8nbackup"
+              "value": "andrelug/"
             }
           ]
         },
@@ -468,5 +468,5 @@
   "settings": {},
   "staticData": null,
   "tags": [],
-  "updatedAt": "2021-10-31T13:17:44.133Z"
+  "updatedAt": "2021-10-31T13:33:01.832Z"
 }
