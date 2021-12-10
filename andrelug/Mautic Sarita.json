@@ -1,0 +1,204 @@
+{
+  "active": true,
+  "connections": {
+    "Segment Update": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campaign Update": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Campaign Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Emails Send": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2021-11-23T10:56:46.081Z",
+  "id": "3",
+  "name": "Mautic Sarita",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        -2340,
+        120
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://mkt.sarifontana.com/cron_mautic.php?Sarita123&task=mautic%3Asegments%3Aupdate",
+        "allowUnauthorizedCerts": true,
+        "responseFormat": "string",
+        "options": {}
+      },
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        -1920,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "custom",
+              "cronExpression": "5,20,35,50 * * * * *"
+            }
+          ]
+        }
+      },
+      "name": "Campaign Update",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -2160,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "custom",
+              "cronExpression": "0,15,30,45 * * * * *"
+            }
+          ]
+        }
+      },
+      "name": "Segment Update",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -2160,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://mkt.sarifontana.com/cron_mautic.php?Sarita123&task=mautic%3Acampaigns%3Aupdate",
+        "allowUnauthorizedCerts": true,
+        "responseFormat": "string",
+        "options": {}
+      },
+      "name": "HTTP Request1",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        -1920,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "custom",
+              "cronExpression": "10,25,40,55 * * * * *"
+            }
+          ]
+        }
+      },
+      "name": "Campaign Trigger",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -2160,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://mkt.sarifontana.com/cron_mautic.php?Sarita123&task=mautic%3Acampaigns%3Atrigger",
+        "allowUnauthorizedCerts": true,
+        "responseFormat": "string",
+        "options": {}
+      },
+      "name": "HTTP Request2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        -1920,
+        660
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://mkt.sarifontana.com/cron_mautic.php?Sarita123&task=mautic%3Aemails%3Asend",
+        "allowUnauthorizedCerts": true,
+        "responseFormat": "string",
+        "options": {}
+      },
+      "name": "HTTP Request3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        -1920,
+        860
+      ]
+    },
+    {
+      "parameters": {
+        "triggerTimes": {
+          "item": [
+            {
+              "mode": "custom",
+              "cronExpression": "*/15 * * * * *"
+            }
+          ]
+        }
+      },
+      "name": "Emails Send",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        -2160,
+        860
+      ]
+    }
+  ],
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "updatedAt": "2021-12-10T03:04:28.200Z"
+}
