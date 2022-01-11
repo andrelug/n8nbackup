@@ -1,0 +1,30 @@
+{
+  "active": false,
+  "connections": {
+    "Start": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2022-01-10T14:35:57.623Z",
+  "id": "2",
+  "name": "Lead reports for Google Data Studio",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ],
+      "disabled": true
+    }
+  ],
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "updatedAt": "2022-01-10T14:35:57.623Z"
+}
