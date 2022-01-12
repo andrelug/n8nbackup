@@ -1,0 +1,49 @@
+{
+  "active": false,
+  "connections": {
+    "Start": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "createdAt": "2022-01-11T18:39:04.279Z",
+  "id": "3",
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ],
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "id": "585582b77b68fa4b977ffb98"
+      },
+      "name": "Trello Trigger",
+      "type": "n8n-nodes-base.trelloTrigger",
+      "typeVersion": 1,
+      "position": [
+        440,
+        320
+      ],
+      "webhookId": "4d0e412d-4f27-4cab-807b-0f0490176d69",
+      "credentials": {
+        "trelloApi": {
+          "id": "5",
+          "name": "Trello account"
+        }
+      }
+    }
+  ],
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "updatedAt": "2022-01-11T18:39:04.279Z"
+}
