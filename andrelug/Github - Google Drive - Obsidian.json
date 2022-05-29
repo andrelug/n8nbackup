@@ -1,0 +1,23 @@
+{
+  "active": false,
+  "connections": {},
+  "createdAt": "2022-05-28T13:14:50.934Z",
+  "id": "5",
+  "name": "Github - Google Drive - Obsidian",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    }
+  ],
+  "settings": {},
+  "staticData": null,
+  "tags": [],
+  "updatedAt": "2022-05-28T13:14:50.934Z"
+}
