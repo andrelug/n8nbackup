@@ -1,0 +1,118 @@
+{
+  "active": true,
+  "connections": {
+    "Chalenge": {
+      "main": [
+        [
+          {
+            "node": "VerifyToken",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "VerifyToken": {
+      "main": [
+        [
+          {
+            "node": "Verifica1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "NoOp1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2022-06-12T13:08:49.961Z",
+  "id": "5",
+  "name": "Whatsmart v2",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json[\"query\"][\"hub.verify_token\"]}}",
+              "value2": "wsjc"
+            }
+          ]
+        }
+      },
+      "name": "VerifyToken",
+      "type": "n8n-nodes-base.if",
+      "position": [
+        680,
+        140
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "path": "6131d84a-40fb-465e-a14e-121a741b0e681",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "name": "Chalenge",
+      "type": "n8n-nodes-base.webhook",
+      "position": [
+        480,
+        140
+      ],
+      "webhookId": "6131d84a-40fb-465e-a14e-121a741b0e68",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {},
+      "name": "NoOp1",
+      "type": "n8n-nodes-base.noOp",
+      "position": [
+        940,
+        240
+      ],
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{$json[\"query\"][\"hub.challenge\"]}}",
+        "options": {}
+      },
+      "name": "Verifica1",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "position": [
+        940,
+        60
+      ],
+      "typeVersion": 1
+    }
+  ],
+  "settings": {},
+  "staticData": null,
+  "tags": [
+    {
+      "id": "1",
+      "name": "whatsapp",
+      "createdAt": "2022-06-12T13:10:14.540Z",
+      "updatedAt": "2022-06-12T13:10:14.540Z"
+    }
+  ],
+  "updatedAt": "2022-06-12T14:56:22.260Z"
+}
